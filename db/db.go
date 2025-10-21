@@ -67,11 +67,7 @@ func UpdateServer(server *Server) error {
 
 	_, err = collection.ReplaceOne(context.TODO(), bson.D{{Key: "name", Value: server.Name}}, server)
 
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return err
 }
 
 func GetServerCollection() *mongo.Collection {
