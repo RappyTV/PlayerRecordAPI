@@ -25,7 +25,6 @@ func Connect() {
 	if err != nil {
 		log.Fatalln("Failed to ping database", err)
 	}
-	defer Disconnect()
 	log.Println("Connected to database")
 	client = _client
 }
