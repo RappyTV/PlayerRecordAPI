@@ -12,10 +12,16 @@ import (
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
-const version = "1.0.0"
+const Version = "1.0.0"
 
-type InfoResponse struct {
+type VersionResponse struct {
 	Version string `json:"version"`
+}
+
+type ServerResponse struct {
+	Name         string `json:"server"`
+	PlayerRecord int32  `json:"player_record"`
+	Timestamp    int64  `json:"timestamp"`
 }
 
 type ErrorResponse struct {
@@ -42,7 +48,7 @@ func SetupRouter() {
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(InfoResponse{Version: version})
+		json.NewEncoder(w).Encode(VersionResponse{Version: Version})
 	})
 
 	r.Get("/{serverName}", func(w http.ResponseWriter, r *http.Request) {
@@ -62,7 +68,11 @@ func SetupRouter() {
 			panic(err)
 		}
 
-		encoder.Encode(server)
+		encoder.Encode(&ServerResponse{
+			Name:         server.Name,
+			PlayerRecord: server.PlayerRecord,
+			Timestamp:    server.Timestamp.Unix(),
+		})
 	})
 
 	bind := os.Getenv("API_BIND")
