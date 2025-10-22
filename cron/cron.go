@@ -3,11 +3,11 @@ package cron
 import (
 	"log"
 	"os"
-	"player-record-api/db"
-	"player-record-api/labynet"
 	"strings"
 	"time"
 
+	"github.com/RappyTV/PlayerRecordAPI/db"
+	"github.com/RappyTV/PlayerRecordAPI/labynet"
 	"github.com/go-co-op/gocron/v2"
 )
 

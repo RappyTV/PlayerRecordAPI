@@ -1,4 +1,4 @@
-module player-record-api
+module github.com/RappyTV/PlayerRecordAPI
 
 go 1.25.3
 
