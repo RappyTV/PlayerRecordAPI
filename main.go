@@ -1,10 +1,10 @@
 package main
 
 import (
-	"player-record-api/cron"
-	"player-record-api/db"
-	"player-record-api/env"
-	"player-record-api/router"
+	"github.com/RappyTV/PlayerRecordAPI/cron"
+	"github.com/RappyTV/PlayerRecordAPI/db"
+	"github.com/RappyTV/PlayerRecordAPI/env"
+	"github.com/RappyTV/PlayerRecordAPI/router"
 )
 
 func main() {

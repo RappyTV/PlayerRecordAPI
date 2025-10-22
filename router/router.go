@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"player-record-api/db"
 
+	"github.com/RappyTV/PlayerRecordAPI/db"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"go.mongodb.org/mongo-driver/v2/mongo"

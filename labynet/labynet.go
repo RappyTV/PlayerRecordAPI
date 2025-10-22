@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"player-record-api/router"
+
+	"github.com/RappyTV/PlayerRecordAPI/router"
 )
 
 const endpoint string = "https://laby.net/api/server/playercount/%v"
