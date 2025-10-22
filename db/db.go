@@ -19,11 +19,11 @@ func Connect() {
 	dbName = os.Getenv("MONGO_DB")
 
 	if err != nil {
-		log.Fatalln("Failed to connect to database", err)
+		log.Fatalln("Failed to connect to database:", err)
 	}
 	err = _client.Ping(context.TODO(), nil)
 	if err != nil {
-		log.Fatalln("Failed to ping database", err)
+		log.Fatalln("Failed to ping database:", err)
 	}
 	log.Println("Connected to database")
 	client = _client
