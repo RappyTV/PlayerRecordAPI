@@ -16,7 +16,7 @@ type PlayerCountGraphPoint struct {
 }
 
 func GetServerPlayerRecord(server string) (*PlayerCountGraphPoint, error) {
-	request, err := http.NewRequest("GET", fmt.Sprintf(endpoint, server), nil)
+	request, _ := http.NewRequest("GET", fmt.Sprintf(endpoint, server), nil)
 	request.Header.Add("User-Agent", "PlayerRecordAPI v"+router.Version+" (github.com/RappyTV/PlayerRecordAPI)")
 	res, err := http.DefaultClient.Do(request)
 
