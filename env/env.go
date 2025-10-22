@@ -7,11 +7,9 @@ import (
 )
 
 func LoadEnv() {
-	err := godotenv.Load()
+	err := godotenv.Load(".env", ".env.local")
 
 	if err != nil {
-		log.Fatalln("Failed to load .env file", err)
+		log.Println(err, "- ignore this when using Docker")
 	}
-
-	log.Println("Environment variables loaded from .env file")
 }
