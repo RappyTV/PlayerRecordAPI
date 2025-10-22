@@ -12,7 +12,7 @@ RUN go build -o main .
 FROM debian:bookworm-slim AS runner
 
 # Install minimal CA certs for HTTPS calls
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
